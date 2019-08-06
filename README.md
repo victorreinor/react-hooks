@@ -28,3 +28,40 @@ Exemplo 2:
     <button type="button" onClick={handleAdd}>Adicionar</button>
   );
 ```
+
+### useEffect
+---
+Ele sobrepõe os métodos do ciclo de vida dos componentes **componentDidMount, componentDidUpdate, componentWillUnmount**
+
+Exemplo 1: componentDidUpdate
+```javascript
+  useEffect(() => {
+    localStorage.setItem('tech', JSON.stringify(tech));
+  }, [tech]);
+```
+
+Primeiro parâmetro que o **useEffect** recebe é uma função que será executada e o segundo e quando ela vai ser executado, ou seja, o segundo parâmetro é um array de dependencias, ele fica monitorando alterações em certas variáveis, nesse caso do exemplo a cima deixamos ele monitorando a variavel **tech** e caso aja alguma alteração ele inclui no localStorage do browser
+
+Exemplo 2: componentDidUpdate
+```javascript
+  useEffect(() => {
+    const storageTech = localStorage.getItem('tech');
+
+    if (storageTech) setTech(JSON.parse(storageTech));
+  }, []);
+```
+
+No exemplo acima deixamos o segundo parâmetro vazio pois queremos que ele só executa quando o componente montar e recuperamos todas as informações já salvas no localStorage, fazendo assim o papel do **componentDidMount**
+
+Exemplo 3: componentWillUnmount
+```javascript
+  useEffect(() => {
+    return () => {
+      /*
+        bloco de código
+      */
+    };
+  }, []);
+```
+
+Para fazer o papel do **componentWillUnmount** precisamos só de colocar um return com uma função como monstra o exemplo a cima.
