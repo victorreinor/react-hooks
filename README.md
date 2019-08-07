@@ -65,7 +65,7 @@ Exemplo 3: componentWillUnmount
 Para fazer o papel do **componentWillUnmount** precisamos só de colocar um return com uma função como monstra o exemplo a cima.
 
 ### useMemo
-
+---
 Exemplo de introdução:
 ```javascript
   return <strong>Você tem {tech.length} tecnologias</strong>
