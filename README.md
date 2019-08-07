@@ -96,4 +96,4 @@ Exemplo 1:
   }, [newTech, tech]);
 ```
 
-No exemplo acima, passamos de primeiro parâmetro passamos uma função e dentro desta função inserimos o nosso bloco de código que será executado, no segundo parâmetro passamos as variáveis que o nosso bloco de código deverá ficar monitorando, ou seja, toda vez que tiver alguma alteração nas variáveis **newTech** e **tech** será executado o nosso trecho de código.
+No exemplo acima, passamos de primeiro parâmetro uma função e dentro desta função inserimos o nosso bloco de código que será executado, no segundo parâmetro passamos as variáveis que o nosso bloco de código deverá ficar monitorando, ou seja, toda vez que tiver alguma alteração nas variáveis **newTech** e **tech** será executado o nosso trecho de código.
