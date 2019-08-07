@@ -81,4 +81,4 @@ Exemplo 2:
   return <strong>Você tem {techSize} tecnologias</strong>
 ```
 
-No exemplo acima criamos uma variável para receber nossa função, no primeiro parâmetro passamos uma função e dentro desta função inserimos nosso bloco de código, e como de costume o segundo parâmetro passamos uma variável para ele ficar monitorandom, assim toda vez que houver alguma mudança nesta variável a função será executada e exibirá na tela o retorno da função
+No exemplo acima criamos uma variável para receber nossa função, no primeiro parâmetro passamos uma função e dentro desta função inserimos nosso bloco de código, e como de costume o segundo parâmetro passamos uma variável para ele ficar monitorando assim toda vez que houver alguma mudança nesta variável a função será executada e exibirá na tela o retorno da função
