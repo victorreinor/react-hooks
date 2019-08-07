@@ -24,9 +24,7 @@ Exemplo 2:
     setTech([...tech, 'NodeJS']);
   }
 
-  return (
-    <button type="button" onClick={handleAdd}>Adicionar</button>
-  );
+  return <button type="button" onClick={handleAdd}>Adicionar</button>
 ```
 
 ### useEffect
@@ -65,3 +63,22 @@ Exemplo 3: componentWillUnmount
 ```
 
 Para fazer o papel do **componentWillUnmount** precisamos só de colocar um return com uma função como monstra o exemplo a cima.
+
+### useMemo
+
+Exemplo de introdução:
+```javascript
+  return <strong>Você tem {tech.length} tecnologias</strong>
+```
+No exemplo acima, acessamos o tamanho do array com a função **length**..
+
+O problema deste código é que ele renderiza toda vez que o **return** é chamado, ele é chamado sempre que qualquer tipo de **variável** que está sendo utlizada no componente é alterada, toda vez que inserirmos um valor dentro de um input controlado e etc... Por mais que um **.length** seja simples o **useMemo** é indicado para este tipo de ocasiões, no caso do nosso exemplo é muito simples mas varia de caso a caso, pode acontecer de ter um calculo muito mais complexo que chama outras funções e que podera afetar a performance caso seja muito complexo.
+
+Exemplo 2:
+```javascript
+  const techSize = useMemo(() => tech.length, [tech]);
+
+  return <strong>Você tem {techSize} tecnologias</strong>
+```
+
+No exemplo acima criamos uma variável para receber nossa função, no primeiro parâmetro passamos uma função e dentro desta função inserimos nosso bloco de código, e como de costume o segundo parâmetro passamos uma variável para ele ficar monitorandom, assim toda vez que houver alguma mudança nesta variável a função será executada e exibirá na tela o retorno da função
