@@ -82,3 +82,18 @@ Exemplo 2:
 ```
 
 No exemplo acima criamos uma variável para receber nossa função, no primeiro parâmetro passamos uma função e dentro desta função inserimos nosso bloco de código, e como de costume o segundo parâmetro passamos uma variável para ele ficar monitorando assim toda vez que houver alguma mudança nesta variável a função será executada e exibirá na tela o retorno da função
+
+### useCallback
+---
+Na explição do hook **useState** no **Exemplo 2** criamos uma função chamada **handleAdd** ela é uma **function** que está sendo definida dentro de outra **function**, como ele esta declarada junto com os hooks ela sempre será montada toda vez que as variáveis do componente é alterada.
+Exemplo: se eu adicionar alguma informação em algum array, digitar em um input controlado entre outros... ela sempre será criada novamente do zero, então isso acaba gastando **processamento do javascript** pois o javascript terá que apagar da memória e criar uma nova locação para criar ela novamente, no caso do nosso exemplo é uma função muito simples mas muitos casos pode acontecer de ser códigos mais complexos.
+
+Exemplo 1:
+```javascript
+  const handleAdd = useCallback(() => {
+    setTech([...tech, newTech]);
+    setNewTech('');
+  }, [newTech, tech]);
+```
+
+No exemplo acima, passamos de primeiro parâmetro passamos uma função e dentro desta função inserimos o nosso bloco de código que será executado, no segundo parâmetro passamos as variáveis que o nosso bloco de código deverá ficar monitorando, ou seja, toda vez que tiver alguma alteração nas variáveis **newTech** e **tech** será executado o nosso trecho de código.
