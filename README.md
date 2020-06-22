@@ -97,3 +97,17 @@ Exemplo 1:
 ```
 
 No exemplo acima, passamos de primeiro parâmetro uma função e dentro desta função inserimos o nosso bloco de código que será executado, no segundo parâmetro passamos as variáveis que o nosso bloco de código deverá ficar monitorando, ou seja, toda vez que tiver alguma alteração nas variáveis **newTech** e **tech** será executado o nosso trecho de código.
+
+## Passo-a-passo para rodar a aplicação
+
+### `https://github.com/victorreinor/react-hooks`
+Clona o repositorio do projeto;
+
+### `cd react-hooks`
+Entra dentro da pasta do projeto;
+
+### `yarn install`
+Baixa as dependencias que são utilizadas no projeto;
+
+### `code . && yarn start`
+Abre o projeto com vscode e inicia a aplicação;
